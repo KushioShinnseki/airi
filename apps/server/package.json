@@ -4,7 +4,7 @@
   "version": "0.8.5-beta.3",
   "private": true,
   "scripts": {
-    "apply:env": "dotenvx run -f .env -f .env.local --overload --ignore=MISSING_ENV_FILE",
+    "apply:env": "dotenvx run -f .env.local --overload --ignore=MISSING_ENV_FILE",
     "auth:generate": "pnpm run apply:env -- better-auth generate --config src/scripts/auth.ts --output src/schemas/accounts.ts -y",
     "dev": "pnpm run apply:env -- tsx --watch src/app.ts",
     "start": "tsx src/app.ts",
