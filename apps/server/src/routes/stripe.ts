@@ -81,6 +81,9 @@ export function createStripeRoutes(fluxService: FluxService, env: Env) {
 
         if (userId && amount) {
           await fluxService.addFlux(userId, amount * env.FLUX_PER_CENT)
+
+          if (typeof session.customer === 'string')
+            await fluxService.updateStripeCustomerId(userId, session.customer)
         }
       }
 
